@@ -6,9 +6,33 @@
         <div class="col-12 col-md-6 offset-md-3">
            <div class="card">
                <div class="card-body">
-                    {% for event in events %} 
-                        <p>{{event}}</p>
-                    {% endfor %}
+                    <div class="col-xs-12 text-center">
+                        <h2>Events Metherelogic</h2>
+                      </div>
+                    
+                      <div id="donut-chart"></div>                    
+                      <script>
+                        var chart = bb.generate({
+                          data: {
+                            columns: [
+                            {% for event in events %} 
+                                ["{{ event.position_name }}", {{ event.position }}],
+                            {% endfor %}
+                            ],
+                            type: "donut",
+                            onclick: function (d, i) {
+                              console.log("onclick", d, i);
+                            },
+                            onover: function (d, i) {
+                              console.log("onover", d, i);
+                            },
+                            onout: function (d, i) {
+                              console.log("onout", d, i);
+                            },
+                          },
+                          bindto: "#donut-chart",
+                        });
+                      </script>
                </div>
             </div>
            </div>

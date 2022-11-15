@@ -10,6 +10,10 @@ class EventMetherologic(models.Model):
     position = models.IntegerField(verbose_name='position in graphic', unique=True)
     status = models.CharField(default=tp_status[0][0], max_length=1, 
                     choices=tp_status, verbose_name='status of event')
+    
+    class Meta:
+        db_table='event'
+        verbose_name_plural = "event"
 
     def __str__(self) -> str:
         return '{} {} {} status: {}'.format(self.position_name, self.how, self.position, self.status)

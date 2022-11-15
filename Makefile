@@ -1,8 +1,17 @@
 clean_pycache:
 	find . -type d -name __pycache__ -exec rm -r {} \+
 
+migrate_db:
+	venv/bin/python manage.py makemigrations
+	venv/bin/python manage.py migrate	
+
+restart_db:
+	rm db.sqlite3
+	make migrate_db
+	venv/bin/python manage.py createsuperuser
+
 run:
-	venv/bin/uvicorn --host 127.0.0.1 --port 8000 --reload --log-level debug --app-dir src main:app
+	venv/bin/python manage.py runserver 0.0.0.0:8000
 
 create-venv:
 	python3 -m venv venv

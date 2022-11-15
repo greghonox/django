@@ -16,4 +16,4 @@ class EventMetherologic(models.Model):
         verbose_name_plural = "event"
 
     def __str__(self) -> str:
-        return '{} {} {} status: {}'.format(self.position_name, self.how, self.position, self.status)
+        return '{} {} {} status: {}'.format(self.position_name, self.where, self.position, self.status)

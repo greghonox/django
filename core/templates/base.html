@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Metherelogic</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+    <!-- MEU CSS -->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+    <!-- MENU -->
+    <header id="header">
+        <div class="contenedor_logo">
+            <img class="img-fluid"  width="100" height="24"  src="{% static '/img/logo.png' %}" alt="logo">
+        </div>
+        <!-- CONTENT MENU -->
+        <nav>
+            <div class="topnav" id="myTopnav">
+                <a>Register Metherelogic</a>
+                <a>Query Metherelogic</a>
+            </div>
+        </nav>            
+        <!-- FIM CONTENT MENU -->
+      </div>
+
+    </header>
+    <!-- FIM MENU -->
+
+    <!-- CONTEUDO -->
+    <div id="conteudo">
+        {% block conteudo %}
+        {% endblock %}
+    </div>
+    <!-- FIM CONTEUDO -->
+</body>
+</html>
